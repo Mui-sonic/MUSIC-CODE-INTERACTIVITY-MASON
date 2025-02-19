@@ -46,7 +46,7 @@ SynthDef("pluck", {arg amp = 0.1, freq = 440, decay = 5, mutedString = 0.1, rate
         decaytime: decay,
         coef: mutedString
     );
-
+3
     // Apply reverb to the pluck sound
     reverb = FreeVerb.ar(snd, reverbAmount, reverbAmount, 0.5);  // Reverb UGen
 
