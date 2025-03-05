@@ -28,7 +28,7 @@ SynthDef("pluck", {arg amp = 0.1, freq = 440, decay = 5, mutedString = 0.1, rate
 // Create a NodeProxy for the GUI and audio interaction
 ~np = NodeProxy.audio(s, 2);
 
-// Create a GUI with sliders to control parameters
+// Create a GUI wit∏h sliders to control parameters
 (
 ~np[0] = {|amp=0.1, freq=440, decay = 1000, mutedString=0.1, rate=1, delay=0.1, reverbAmount=0.5|
     var snd, env, trig, reverb;
@@ -44,9 +44,9 @@ SynthDef("pluck", {arg amp = 0.1, freq = 440, decay = 5, mutedString = 0.1, rate
         maxdelaytime: 0.5,
         delaytime: freq.reciprocal + delay,  // Add the delay parameter here
         decaytime: decay,
-        coef: mutedString
+        coef: mutedString,
     );
-3
+
     // Apply reverb to the pluck sound
     reverb = FreeVerb.ar(snd, reverbAmount, reverbAmount, 0.5);  // Reverb UGen
 
@@ -57,6 +57,9 @@ SynthDef("pluck", {arg amp = 0.1, freq = 440, decay = 5, mutedString = 0.1, rate
 
 // Create a GUI to control the parameters
 ~gui = ~np.gui;
+
+w = n.gui;
+
 
 (
     // Add sliders for interactive control
